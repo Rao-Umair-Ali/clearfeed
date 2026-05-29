@@ -4,6 +4,7 @@ const DISTRACTING_DOMAINS = [
   "tiktok.com",
   "twitter.com",
   "x.com",
+  
   "facebook.com",
   "reddit.com",
   "netflix.com",
