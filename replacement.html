@@ -1,0 +1,51 @@
+<!-- replacement.html - Custom markup for the distraction-free YouTube homepage replacement screen -->
+<div id="clearfeed-homepage-replacer">
+  <div class="clearfeed-container">
+    <!-- Header Greeting Section -->
+    <header class="clearfeed-header">
+      <h1 id="clearfeed-greeting" class="clearfeed-title">Good day, there</h1>
+      <p class="clearfeed-subtitle">Protect your attention.</p>
+    </header>
+
+    <!-- Focus Task Section -->
+    <div class="clearfeed-task-card">
+      <span class="clearfeed-task-label">TODAY'S MAIN FOCUS</span>
+      <div class="clearfeed-task-wrapper">
+        <div id="clearfeed-task-display" class="clearfeed-task-text empty" tabindex="0">What are you here to do?</div>
+        <input type="text" id="clearfeed-task-input" class="clearfeed-task-field" style="display: none;" placeholder="What are you here to do?" maxlength="120" />
+      </div>
+    </div>
+
+    <!-- Search Section (Native YouTube Search Visual Style) -->
+    <div class="clearfeed-search-section">
+      <form id="clearfeed-search-form" action="/results" method="get" class="clearfeed-search-bar">
+        <div class="clearfeed-search-input-wrapper">
+          <input 
+            type="text" 
+            name="search_query" 
+            id="clearfeed-search-input" 
+            placeholder="Search YouTube..." 
+            autocomplete="off"
+            required
+          />
+        </div>
+        <button type="submit" class="clearfeed-search-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" class="clearfeed-search-icon" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g><path d="M20.87,20.17l-5.59-5.59C16.35,13.35,17,11.75,17,10c0-3.87-3.13-7-7-7s-7,3.13-7,7s3.13,7,7,7c1.75,0,3.35-0.65,4.58-1.71 l5.59,5.59L20.87,20.17z M10,16c-3.31,0-6-2.69-6-6s2.69-6,6-6s6,2.69,6,6S13.31,16,10,16z"></path></g>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- Rotating Quote Container -->
+    <div class="clearfeed-quote-card">
+      <p id="clearfeed-quote-text" class="clearfeed-quote">"Deep work is the superpower of the 21st century."</p>
+    </div>
+
+    <!-- Reclaimed Stats Badge -->
+    <div class="clearfeed-stats-badge">
+      <div class="clearfeed-stats-icon">⚡</div>
+      <div id="clearfeed-stats-value" class="clearfeed-stats-text">You've reclaimed 0.0 hours this week</div>
+    </div>
+  </div>
+</div>

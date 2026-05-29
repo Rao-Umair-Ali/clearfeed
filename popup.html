@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClearFeed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-wrapper">
+    <header class="popup-header">
+      <div class="logo-group">
+        <span class="logo-accent">⚡</span>
+        <h1 class="logo-wordmark">ClearFeed</h1>
+      </div>
+      <p id="current-domain" class="current-domain">clearfeed.app</p>
+      <div id="paused-indicator" style="display:none; margin-top:8px; color:#facc15; font-size:12px;"></div>
+    </header>
+
+    <section class="master-toggle-section" id="main-controls">
+      <button id="master-toggle-btn" class="master-toggle-pill" aria-label="Toggle protection">
+        <span class="toggle-thumb"></span>
+      </button>
+      <p id="master-status-label" class="master-status-label">Protection is ON</p>
+    </section>
+
+    <section class="platforms-section" id="platforms-container">
+      <h2 class="section-title">Platforms</h2>
+      <div class="platform-row">
+        <div class="platform-info"><span class="platform-name">🔴 YouTube</span></div>
+        <label class="switch"><input type="checkbox" id="platform-yt-checkbox" checked><span class="slider"></span></label>
+      </div>
+      <div class="platform-row">
+        <div class="platform-info"><span class="platform-name">📸 Instagram</span></div>
+        <label class="switch"><input type="checkbox" id="platform-ig-checkbox" checked><span class="slider"></span></label>
+      </div>
+      <div class="platform-row">
+        <div class="platform-info"><span class="platform-name">🎵 TikTok</span></div>
+        <label class="switch"><input type="checkbox" id="platform-tt-checkbox" checked><span class="slider"></span></label>
+      </div>
+    </section>
+
+    <section style="background:#14161f;border:1px solid #242735;border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:6px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:13px;font-weight:600;">🧠 Doomscroll Detection</div>
+        <label class="switch"><input type="checkbox" id="doomscroll-toggle" checked><span class="slider"></span></label>
+      </div>
+      <div style="font-size:11px;color:#9ca3af;">Detects scroll spirals in real time</div>
+    </section>
+
+    <section class="stats-section">
+      <div class="metric-box"><span class="metric-label">Today</span><span id="metric-today" class="metric-value">0</span></div>
+      <div class="metric-box"><span class="metric-label">Streak</span><span id="metric-streak" class="metric-value">0 days</span></div>
+    </section>
+
+    <section style="background:#14161f;border:1px solid #242735;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:10px;">
+      <h2 style="margin:0;font-size:13px;">🎓 Exam Mode</h2>
+      <div id="exam-inactive-view" style="display:flex;flex-direction:column;gap:8px;">
+        <div id="duration-pills" style="display:flex;gap:6px;flex-wrap:wrap;">
+          <button class="exam-pill" data-value="25">25min</button>
+          <button class="exam-pill" data-value="50">50min</button>
+          <button class="exam-pill" data-value="90">90min</button>
+          <button class="exam-pill" data-value="custom">Custom</button>
+        </div>
+        <input id="exam-custom-duration" type="number" min="10" max="180" placeholder="Custom minutes" style="display:none;background:#0f1118;color:#fff;border:1px solid #2c3041;border-radius:8px;padding:8px;" />
+        <input id="exam-whitelist" type="text" placeholder="khanacademy.org, coursera.org" style="background:#0f1118;color:#fff;border:1px solid #2c3041;border-radius:8px;padding:8px;" />
+        <button id="start-exam-btn" style="width:100%;background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;border:none;border-radius:10px;padding:10px;font-weight:700;cursor:pointer;">Start Exam Mode</button>
+      </div>
+      <div id="exam-active-view" style="display:none;flex-direction:column;gap:8px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e;"></span><span style="font-size:13px;font-weight:600;">Exam Mode Active</span></div>
+          <button id="end-early-btn" style="font-size:11px;background:none;border:none;color:#9ca3af;cursor:pointer;">End Early</button>
+        </div>
+        <div id="exam-phase-text" style="font-size:12px;color:#cbd5e1;">Focus Session 1 of 4</div>
+        <div id="exam-countdown" style="font-size:28px;font-family:monospace;font-weight:700;">25:00</div>
+      </div>
+    </section>
+
+    <footer class="popup-footer">
+      <a href="#" id="link-settings" class="footer-link">Settings</a>
+      <a href="#" id="btn-share" class="share-button"><span>Share</span></a>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

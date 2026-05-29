@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClearFeed Options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="dashboard-wrapper">
+    <aside class="dashboard-sidebar">
+      <div class="brand-group">
+        <span class="brand-logo">⚡</span>
+        <div class="brand-text">
+          <h1 class="brand-title">ClearFeed</h1>
+          <p class="brand-tagline">Protect your attention.</p>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#section-profile" class="nav-item active" data-target="section-profile"><span>👤 Profile & Focus</span></a>
+        <a href="#section-youtube" class="nav-item" data-target="section-youtube"><span>🔴 YouTube Filters</span></a>
+        <a href="#section-instagram" class="nav-item" data-target="section-instagram"><span>📸 Instagram Filters</span></a>
+        <a href="#section-tiktok" class="nav-item" data-target="section-tiktok"><span>🎵 TikTok Filters</span></a>
+        <a href="#section-doomscroll" class="nav-item" data-target="section-doomscroll"><span>🧠 Doomscroll Detection</span></a>
+        <a href="#section-stats" class="nav-item" data-target="section-stats"><span>📊 Focus Metrics</span></a>
+        <a href="#section-about" class="nav-item" data-target="section-about"><span>ℹ️ About ClearFeed</span></a>
+      </nav>
+      <div class="sidebar-footer"><span class="version-tag">Version 1.0.0</span></div>
+    </aside>
+
+    <main class="dashboard-content">
+      <header class="content-header">
+        <h2 id="header-section-title">Profile & Focus</h2>
+        <div id="save-indicator" class="save-toast"><span class="toast-dot"></span><span class="toast-text">Saved</span></div>
+      </header>
+
+      <div class="sections-container">
+        <section id="section-profile" class="config-section active">
+          <div class="section-card">
+            <h3 class="card-title">Personalization</h3>
+            <div class="input-group">
+              <label for="profile-name-input" class="field-label">Your Name</label>
+              <input type="text" id="profile-name-input" class="form-field" maxlength="30" />
+            </div>
+            <div class="input-group">
+              <label for="profile-task-input" class="field-label">Today's Focus Goal</label>
+              <input type="text" id="profile-task-input" class="form-field" maxlength="120" />
+            </div>
+          </div>
+        </section>
+
+        <section id="section-youtube" class="config-section">
+          <div class="section-card">
+            <h3 class="card-title">YouTube Filters</h3>
+            <div class="toggle-list">
+              <div class="toggle-row"><span class="toggle-title">Remove Shorts Shelf</span><label class="switch"><input type="checkbox" id="setting-shorts" checked><span class="slider"></span></label></div>
+              <div class="toggle-row"><span class="toggle-title">Remove Homepage Video Feed</span><label class="switch"><input type="checkbox" id="setting-homefeed" checked><span class="slider"></span></label></div>
+              <div class="toggle-row"><span class="toggle-title">Remove Watch Recommendations Sidebar</span><label class="switch"><input type="checkbox" id="setting-sidebar" checked><span class="slider"></span></label></div>
+              <div class="toggle-row"><span class="toggle-title">Remove Autoplay & End Screens</span><label class="switch"><input type="checkbox" id="setting-autoplay" checked><span class="slider"></span></label></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="section-instagram" class="config-section">
+          <div class="section-card">
+            <h3 class="card-title">Instagram Filters</h3>
+            <div class="toggle-list">
+              <div class="toggle-row"><span class="toggle-title">Remove Reels</span><label class="switch"><input type="checkbox" id="ig-reels" checked><span class="slider"></span></label></div>
+              <div class="toggle-row"><span class="toggle-title">Remove Explore</span><label class="switch"><input type="checkbox" id="ig-explore" checked><span class="slider"></span></label></div>
+              <div class="toggle-row"><span class="toggle-title">Remove Stories bar</span><label class="switch"><input type="checkbox" id="ig-stories" checked><span class="slider"></span></label></div>
+              <div class="toggle-row"><span class="toggle-title">Remove Suggested Posts</span><label class="switch"><input type="checkbox" id="ig-suggested" checked><span class="slider"></span></label></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="section-tiktok" class="config-section">
+          <div class="section-card">
+            <h3 class="card-title">TikTok Filters</h3>
+            <div class="toggle-list">
+              <div class="toggle-row"><span class="toggle-title">Remove For You Feed</span><label class="switch"><input type="checkbox" id="tt-feed" checked><span class="slider"></span></label></div>
+              <div class="toggle-row"><span class="toggle-title">Remove Following Feed</span><label class="switch"><input type="checkbox" id="tt-following" checked><span class="slider"></span></label></div>
+              <div class="toggle-row"><span class="toggle-title">Remove LIVE tab</span><label class="switch"><input type="checkbox" id="tt-live" checked><span class="slider"></span></label></div>
+              <div class="toggle-row"><span class="toggle-title">Remove Explore</span><label class="switch"><input type="checkbox" id="tt-explore" checked><span class="slider"></span></label></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="section-doomscroll" class="config-section">
+          <div class="section-card" style="display:flex;flex-direction:column;gap:14px;">
+            <h3 class="card-title">Doomscroll Detection</h3>
+            <div class="toggle-row"><span class="toggle-title">Enable behavioral detection</span><label class="switch"><input type="checkbox" id="ds-enabled" checked><span class="slider"></span></label></div>
+            <div>
+              <div class="field-label" style="margin-bottom:8px;">Sensitivity</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button type="button" class="ds-pill" data-mins="30">Low (30min)</button>
+                <button type="button" class="ds-pill" data-mins="15">Medium (15min)</button>
+                <button type="button" class="ds-pill" data-mins="10">High (10min)</button>
+              </div>
+            </div>
+            <div class="toggle-row"><span class="toggle-title">Scroll velocity detection</span><label class="switch"><input type="checkbox" id="ds-velocity" checked><span class="slider"></span></label></div>
+            <div class="toggle-row"><span class="toggle-title">Session duration alerts</span><label class="switch"><input type="checkbox" id="ds-session" checked><span class="slider"></span></label></div>
+            <div style="background:#1e3a8a33;border:1px solid #1d4ed8;border-radius:10px;padding:12px;color:#bfdbfe;font-size:13px;">ClearFeed detects scroll patterns locally on your device. Nothing is sent to any server.</div>
+          </div>
+        </section>
+
+        <section id="section-stats" class="config-section">
+          <div class="stats-grid">
+            <div class="metric-card">
+              <span class="metric-label">🔥 Current Streak</span>
+              <span id="stat-streak" class="metric-value">0</span>
+              <span class="metric-desc">days</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">🏆 Best Streak</span>
+              <span id="stat-best" class="metric-value">0</span>
+              <span class="metric-desc">days</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">⚡ Total Saved</span>
+              <span id="stat-hours" class="metric-value">0</span>
+              <span class="metric-desc">hours</span>
+            </div>
+          </div>
+
+          <div class="section-card" style="margin-top:20px;">
+            <div class="field-label" style="margin-bottom:12px;">Last 7 Days</div>
+            <div id="weekly-chart" style="display:flex;align-items:flex-end;gap:8px;height:140px;margin-bottom:8px;"></div>
+            <div id="weekly-chart-labels" style="display:flex;gap:8px;"></div>
+          </div>
+
+          <div class="section-card" style="margin-top:20px;display:flex;flex-direction:column;gap:8px;">
+            <div id="lifetime-line" style="font-size:13px;color:#cbd5e1;"></div>
+            <div id="sessions-line" style="font-size:13px;color:#cbd5e1;"></div>
+          </div>
+
+          <div class="section-card" style="margin-top:20px;display:flex;flex-direction:column;gap:12px;">
+            <h3 class="card-title">Share your progress</h3>
+            <div style="border:1px solid #2c3041;border-radius:14px;padding:14px;background:#101321;">
+              <pre id="share-card" style="white-space:pre-wrap;margin:0;font-family:Outfit,sans-serif;color:#dbeafe;font-size:13px;"></pre>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <button type="button" id="copy-card-btn" class="zone-button button-secondary">Copy card text</button>
+              <span id="copy-confirm" style="font-size:12px;color:#22c55e;opacity:0;transition:opacity 0.2s;">Copied!</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="section-about" class="config-section">
+          <div class="section-card">
+            <h3 class="card-title">About ClearFeed</h3>
+            <p class="card-desc">Protecting attention since 2026. Built for students and anyone who wants their focus back.</p>
+            <div class="links-list">
+              <div class="link-item">
+                <span class="link-item-label">Version</span>
+                <span>1.0.0</span>
+              </div>
+              <div class="link-item">
+                <span class="link-item-label">Report a broken filter</span>
+                <a href="mailto:support@clearfeed.app?subject=ClearFeed%20Broken%20Filter%20Report" class="action-link text-accent">Send email →</a>
+              </div>
+              <div class="link-item">
+                <span class="link-item-label">Export my data</span>
+                <button type="button" id="export-data-btn" class="zone-button button-secondary">Download JSON</button>
+              </div>
+              <div class="link-item">
+                <span class="link-item-label">Reset all stats</span>
+                <button type="button" id="reset-stats-btn" class="zone-button button-danger">Reset Stats</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div id="reset-modal" class="modal-overlay">
+    <div class="modal-card">
+      <h3 class="modal-title">Reset all stats?</h3>
+      <p class="modal-desc">This will permanently delete your streak, hours saved, and all focus data. This cannot be undone.</p>
+      <div class="modal-actions">
+        <button type="button" id="modal-cancel" class="modal-btn button-secondary">Cancel</button>
+        <button type="button" id="modal-confirm" class="modal-btn button-danger">Yes, reset</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

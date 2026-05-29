@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClearFeed</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #0f0f0f;
+      color: #f8fafc;
+      font-family: Outfit, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .wrap {
+      width: min(92vw, 480px);
+      text-align: center;
+    }
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      margin-bottom: 12px;
+      color: #a5b4fc;
+    }
+    .emoji {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 26px;
+      margin: 0 0 10px;
+      line-height: 1.3;
+    }
+    .sub {
+      color: #9ca3af;
+      line-height: 1.5;
+      margin: 0 0 18px;
+    }
+    .stats {
+      border: 1px solid #2b2b2b;
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 18px;
+      color: #e5e7eb;
+      font-size: 15px;
+    }
+    .countdown-label {
+      color: #9ca3af;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .countdown-time {
+      font-size: 36px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      margin-bottom: 20px;
+    }
+    .primary {
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+      padding: 12px;
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 12px;
+    }
+    .secondary {
+      display: inline-block;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 13px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    .note {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #94a3b8;
+      min-height: 20px;
+    }
+    .proceed {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #9ca3af;
+      display: none;
+    }
+    .actions-during { display: block; }
+    .actions-after { display: none; }
+    body.done .actions-during { display: none; }
+    body.done .actions-after { display: block; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo">ClearFeed</div>
+    <div class="emoji">???</div>
+    <h1>Wait — you're about to lose your streak</h1>
+    <p class="sub" id="install-copy">You installed ClearFeed to protect your attention.</p>
+
+    <div class="stats" id="stats-box">?? 0-day streak<br>? 0 hours reclaimed</div>
+
+    <div class="actions-during">
+      <div class="countdown-label">You can uninstall in</div>
+      <div class="countdown-time" id="countdown-time">5:00</div>
+      <button type="button" id="take-break" class="primary">Take a break instead (pause 24h)</button>
+      <button type="button" id="real-break" class="secondary">I need a real break from focus tools</button>
+    </div>
+
+    <div class="actions-after">
+      <p class="sub">OK, we respect your choice.</p>
+      <p class="proceed" style="display:block;">Proceed with uninstall from chrome://extensions</p>
+    </div>
+
+    <div id="note" class="note"></div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const streak = Number(params.get("streak") || 0);
+    const saved = Number(params.get("saved") || 0);
+    const installDate = params.get("date") || "";
+
+    if (installDate) {
+      document.getElementById("install-copy").textContent =
+        "You installed ClearFeed on " + installDate + " because scrolling was hurting your focus.";
+    }
+
+    document.getElementById("stats-box").innerHTML =
+      "?? " + streak + "-day streak<br>? " + saved + " hours reclaimed";
+
+    let remaining = 5 * 60;
+    const countdownEl = document.getElementById("countdown-time");
+
+    const interval = setInterval(function () {
+      remaining -= 1;
+      const m = Math.floor(remaining / 60);
+      const s = String(remaining % 60).padStart(2, "0");
+      countdownEl.textContent = m + ":" + s;
+
+      if (remaining <= 0) {
+        clearInterval(interval);
+        document.body.classList.add("done");
+      }
+    }, 1000);
+
+    document.getElementById("take-break").addEventListener("click", function () {
+      try {
+        if (typeof chrome !== "undefined" && chrome.runtime && chrome.runtime.sendMessage) {
+          chrome.runtime.sendMessage({ type: "pauseFor24Hours" }, function () {
+            window.close();
+          });
+          return;
+        }
+      } catch (e) {}
+      document.getElementById("note").textContent =
+        "Close this tab and re-enable ClearFeed when you're ready.";
+    });
+
+    document.getElementById("real-break").addEventListener("click", function () {
+      document.getElementById("note").textContent =
+        "That's okay. Taking breaks from productivity tools is healthy. Come back whenever you're ready.";
+      setTimeout(function () { window.close(); }, 3000);
+    });
+  </script>
+</body>
+</html>
