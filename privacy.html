@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClearFeed Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card: #14161f;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --accent: #6366f1;
+      --border: #242735;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .brand span { font-size: 28px; }
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 0 0 6px;
+      letter-spacing: -0.3px;
+    }
+    .updated {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 32px 0 12px;
+      color: var(--text);
+    }
+    p, li {
+      color: #d1d5db;
+      font-size: 15px;
+    }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    a { color: var(--accent); }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+    .card strong { color: var(--text); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+    th { background: var(--card); color: var(--text); }
+    td { color: #d1d5db; }
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><span>⚡</span></div>
+    <h1>ClearFeed Privacy Policy</h1>
+    <p class="updated">Last updated: May 29, 2026</p>
+
+    <p>
+      ClearFeed (“we”, “our”, or “the extension”) is a Chrome browser extension that helps you reduce
+      passive scrolling on YouTube, Instagram, and TikTok. This policy explains what information the
+      extension handles and how it is used.
+    </p>
+
+    <div class="card">
+      <strong>Summary:</strong> ClearFeed processes data locally in your browser. We do not operate
+      servers that collect your browsing history, and we do not sell your personal information.
+    </div>
+
+    <h2>1. What ClearFeed does</h2>
+    <p>When enabled, ClearFeed runs only on these websites:</p>
+    <ul>
+      <li><strong>youtube.com</strong> — hides addictive feeds (Shorts, home feed, recommendations, autoplay) and may show a focus replacement screen</li>
+      <li><strong>instagram.com</strong> — hides Reels, Explore, Stories bar, and suggested content where configured</li>
+      <li><strong>tiktok.com</strong> — hides For You / Following feeds and distracting navigation where configured</li>
+    </ul>
+    <p>
+      Optional features include Exam Mode (timed focus sessions with site blocking), doomscroll
+      detection (session duration and scroll alerts), streaks, and focus statistics. All of these
+      run on your device.
+    </p>
+
+    <h2>2. Information we collect</h2>
+    <p>
+      <strong>We do not collect, transmit, or store your data on our servers.</strong>
+      ClearFeed does not require an account and does not send your browsing activity to us or to
+      third-party analytics services.
+    </p>
+    <p>The extension may store the following <strong>locally in your browser</strong> using Chrome’s storage APIs (<code>chrome.storage.sync</code> and <code>chrome.storage.local</code>):</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Data type</th>
+          <th>Purpose</th>
+          <th>Storage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Extension settings</td>
+          <td>Platform toggles, filter preferences, doomscroll sensitivity</td>
+          <td>chrome.storage.sync</td>
+        </tr>
+        <tr>
+          <td>Profile (optional)</td>
+          <td>Display name and daily focus goal on the YouTube replacement screen</td>
+          <td>chrome.storage.sync</td>
+        </tr>
+        <tr>
+          <td>Focus statistics</td>
+          <td>Streaks, elements removed, daily counts, estimated time saved</td>
+          <td>chrome.storage.local</td>
+        </tr>
+        <tr>
+          <td>Exam Mode state</td>
+          <td>Session timers, Pomodoro phase, whitelist, session history</td>
+          <td>chrome.storage.local</td>
+        </tr>
+        <tr>
+          <td>Doomscroll data</td>
+          <td>Cooldown timestamps and per-site soft blocks for the current day</td>
+          <td>chrome.storage.local</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      This data stays on your computer and, for sync storage items, may sync across your Chrome
+      profile if you have Chrome Sync enabled — that sync is managed by Google, not by ClearFeed.
+    </p>
+
+    <h2>3. What we do not do</h2>
+    <ul>
+      <li>We do <strong>not</strong> sell your personal information</li>
+      <li>We do <strong>not</strong> use third-party advertising or analytics trackers</li>
+      <li>We do <strong>not</strong> read passwords, payment details, or private messages on any site</li>
+      <li>We do <strong>not</strong> access websites other than YouTube, Instagram, and TikTok for content modification</li>
+    </ul>
+
+    <h2>4. Permissions explained</h2>
+    <p>ClearFeed requests Chrome permissions only to provide its features:</p>
+    <ul>
+      <li><strong>storage</strong> — save your settings and statistics locally</li>
+      <li><strong>tabs</strong> — open the options page and refresh tabs when you change settings</li>
+      <li><strong>scripting</strong> — inject the exam timer while Exam Mode is active</li>
+      <li><strong>alarms</strong> — daily streak checks and exam session timers</li>
+      <li><strong>notifications</strong> — Pomodoro phase alerts during Exam Mode</li>
+      <li><strong>declarativeNetRequest</strong> — block distracting sites only during active Exam Mode (with optional whitelist)</li>
+      <li><strong>Host access</strong> — limited to youtube.com, instagram.com, and tiktok.com</li>
+    </ul>
+
+    <h2>5. Data encryption</h2>
+    <p>
+      ClearFeed does not transmit your extension data to our servers. Because no personal data is
+      sent to us, there is no ClearFeed-operated data transfer to encrypt. Data stored by Chrome
+      on your device is protected by your operating system and Chrome’s own security model.
+    </p>
+
+    <h2>6. How to delete your data</h2>
+    <p>You can remove ClearFeed data at any time:</p>
+    <ul>
+      <li><strong>Reset statistics:</strong> Open ClearFeed → Settings (options page) → About ClearFeed → <strong>Reset Stats</strong></li>
+      <li><strong>Export first (optional):</strong> About ClearFeed → <strong>Download JSON</strong> to save a copy of your settings and stats</li>
+      <li><strong>Remove everything:</strong> Uninstall ClearFeed from <code>chrome://extensions</code>. This removes locally stored extension data from your browser</li>
+    </ul>
+    <p>
+      If you use Chrome Sync, synced settings may remain in your Google account until you clear
+      synced extension data in Chrome settings.
+    </p>
+
+    <h2>7. Children’s privacy</h2>
+    <p>
+      ClearFeed is not directed at children under 13. We do not knowingly collect personal
+      information from anyone, including children.
+    </p>
+
+    <h2>8. Changes to this policy</h2>
+    <p>
+      We may update this privacy policy when ClearFeed’s features change. The “Last updated” date
+      at the top will be revised. Continued use of the extension after changes means you accept
+      the updated policy.
+    </p>
+
+    <h2>9. Contact</h2>
+    <p>
+      If you have questions about this privacy policy or ClearFeed’s data practices, contact us at:
+    </p>
+    <p>
+      <strong>Email:</strong> <a href="mailto:support@clearfeed.app">support@clearfeed.app</a>
+    </p>
+
+    <footer>
+      © 2026 ClearFeed. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
